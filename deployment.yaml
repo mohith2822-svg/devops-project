@@ -16,7 +16,7 @@ spec:
         app: flask-app
     spec:
       containers:
-      - image: devops-project-web:1.0
+      - image: devops-project-web:1.1
         imagePullPolicy: IfNotPresent
         name: devops-project-web
 status: {}
