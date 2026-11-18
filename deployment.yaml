@@ -19,6 +19,13 @@ spec:
       - image: devops-project-web:1.0
         imagePullPolicy: IfNotPresent
         name: devops-project-web
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "500m"
+            memory: "256Mi"
         livenessProbe:
           httpGet:
             path: /health
