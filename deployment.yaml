@@ -20,9 +20,20 @@ spec:
         imagePullPolicy: IfNotPresent
         name: devops-project-web
         env:
-        - name: APP_ENV
-          valueFrom:
-            configMapKeyRef:
-              name: flask-config
-              key: APP_ENV 
+
+          - name: APP_ENV
+            valueFrom:
+              configMapKeyRef:
+                name: flask-config
+                key: APP_ENV
+          - name: DB_USER
+            valueFrom:
+              secretKeyRef:
+                name: flask-secret
+                key: DB_USER
+          - name: DB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: flask-secret
+                key: DB_PASSWORD
 status: {}
